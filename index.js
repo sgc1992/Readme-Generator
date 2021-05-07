@@ -11,7 +11,7 @@ const generateReadMe = (answers) =>
 - [Username](#username)
 - [Email](#email)
 
-<h1 align="center">${answers.projectTitle}</h1>
+
 
 ## Title
 ${answers.Title}
@@ -20,7 +20,7 @@ ${answers.Title}
 ${answers.summary}
 
 ## Installation
-${answers.installation}
+💾 ${answers.installation}
 
 ## License
 ${answers.license}
@@ -32,7 +32,7 @@ ${answers.tests}
 ${answers.username}
 
 ## Email
-${answers.email}`;
+✉️${answers.email}`;
 
 inquirer
   .prompt([
@@ -82,7 +82,7 @@ inquirer
     },
   ])
   .then((answers) => {
-    const generateContent = generateReadme(answers);
+    const generateContent = generateReadMe(answers);
 
     fs.writeFile('README.md', generateContent, (err) =>
       err ? console.log(err) : console.log('Successfully created README.md')
